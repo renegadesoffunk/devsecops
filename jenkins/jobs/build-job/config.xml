@@ -29,6 +29,11 @@
           <url>https://github.com/renegadesoffunk/devsecops.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
+      <branches>
+        <hudson.plugins.git.BranchSpec>
+          <name>*/main</name>
+        </hudson.plugins.git.BranchSpec>
+      </branches>
       <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
       <submoduleCfg class="empty-list"/>
       <extensions/>
