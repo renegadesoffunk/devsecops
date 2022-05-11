@@ -2,8 +2,8 @@
 ## Getting started
 ## The assumption here is that the machine will runing a Linux-like Operating system with docker/docker-compose installed on it and a systemd in place.
 ## In order to run some of the requirements of the SonarQube the following parameters have to be executed on the host machine.
-sudo sysctl -w vm.max_map_count=524288
-sudo sysctl -w fs.file-max=131072
+sudo sysctl -w vm.max_map_count=524288  
+sudo sysctl -w fs.file-max=131072  
 
 #That one is not ok from security perspective but as it is an example project we take advantage of it. The reason for applying those permissions is so the jenkins can build/deploy the VueJS app on tost machine
 sudo chmod 666 /var/run/docker.sock 
