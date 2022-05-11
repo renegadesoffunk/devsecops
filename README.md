@@ -13,9 +13,9 @@ Honorable mention: those permissions will be overwritten to their default state 
 ## Execution Steps
 First we have to spin up the jenkins and sonarqube (sonarqube has a db and few other builtin capabilities which are all handled by the docker compose file in the root context of the repo)
 This will build the jenkins image with a specific pipeline/job which will be executed at a later stage:
-  docker-compose build
+  docker-compose build  
 This will spin up the already built jenkins image along with sonarqube and its components:
-  docker-compose up -d 
+  docker-compose up -d  
 The jenkins and sonarqube are supposed ot be fully initialized after ~1-2 minutes (assuming the docker images are previously downloaded). You can check them up by navigating to their UIs. Their http interfaces map to 0.0.0.0:{some port described in the docker-compose file} 
 
 You may continue now with goint to the jenkins UI on http://localhost:8099
