@@ -1,0 +1,31 @@
+plugins:
+  - artifactId: configuration-as-code
+    source:
+      version: 1414.v878271fc496f
+  - artifactId: workflow-aggregator
+    source:
+      version: 2.6
+  - artifactId: credentials
+    source:
+      version: 1087.1089.v2f1b_9a_b_040e4
+  - artifactId: git
+    source:
+      version: 4.11.1
+  - artifactId: ansicolor
+    source:
+      version: 1.0.1
+  - artifactId: timestamper
+    source:
+      version: 1.17
+  - artifactId: pipeline-build-step
+    source:
+      version: 2.18
+  - artifactId: ws-cleanup
+    source:
+      version: 0.42
+  - artifactId: pipeline-model-definition
+    source:
+      version: 2.2075.vce74e77b_ce40
+  - artifactId: sonar
+    source:
+      version: 2.14
