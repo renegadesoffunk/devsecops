@@ -3,10 +3,10 @@ The following repo contains a vuejs application and an orchestration which bring
 
 ## Assumptions
 All of the execution steps below were successfully testes on Ubuntu 20 LTS, CentOS 7, ParrotOS 5. Linux-like distribution with systemd should handle everything smoothly. The machine/host on which all of the actions are going to take place needs to have available sufficient resources (8GB RAM, 15GB free space). 
-In terms of systemd, the following changes need to be made on the host machine (because of the sonarqube's builtin elasticsearch) prior the exetution steps.
+In terms of systemd, the following changes need to be made on the host machine (because of the sonarqube's builtin elasticsearch) prior the exetution steps.  
   sudo sysctl -w vm.max_map_count=524288  
   sudo sysctl -w fs.file-max=131072  
-And one more steps which is changing the permissions of /var/run/docker.sock in order to facilitate the jenkins container's capability to talk to the docker api on the host machine and brings up the vuejs sample app if the pipeline is invoked and passes the quality gate. The required command is:
+And one more steps which is changing the permissions of /var/run/docker.sock in order to facilitate the jenkins container's capability to talk to the docker api on the host machine and brings up the vuejs sample app if the pipeline is invoked and passes the quality gate. The required command is:  
 sudo chmod 666 /var/run/docker.sock  
 Honorable mention: those permissions will be overwritten to their default state if the host is rebooted.
 
