@@ -26,7 +26,7 @@
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>addRepoURL</url>
+          <url>https://github.com/renegadesoffunk/devsecops.git</url>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
       <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
