@@ -30,12 +30,12 @@ services:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
 
-  jenkins-vladi:
+  jenkins:
     build:
       context: jenkins
-    image: jenkins-vladi
+    image: jenkins
     restart: on-failure
-    container_name: jenkins-vladi
+    container_name: jenkins
     environment:
       - JENKINS_ADMIN_ID=admin
       - JENKINS_ADMIN_PASSWORD=admin
