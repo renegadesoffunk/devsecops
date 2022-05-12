@@ -30,5 +30,5 @@ You should put the lines below in file "jenkins/jobs/build-job/main.js" on line 
 `const hash = crypto.createHash('sha1');`  
 That one however has to be pushed to the repo as the jenkins checks out the repo on which the sonarqube will be execute the scanning. So in order to facilitate this stage we have 2 options:
 1. You tell me your github accounts and I provide you with permissions to push to this repo, so you can test it.
-2. You fork this repo and test it. If you go with this option you should adjust the repo URL within file "jenkins/jobs/build-job/config.xml"
+2. You fork this repo and test it. If you go with this option you should adjust the repo URL within file "jenkins/jobs/build-job/config.xml" with the new value you will have on your forked repo. That is so the jenkins can check out the version of the repo which contains the vulnerable lines of code.
 This is the beauty of Jenkins - it will check out a repo accessible over http in its own workspace :)
