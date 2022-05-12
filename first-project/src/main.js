@@ -7,6 +7,8 @@ import router from './router'
 Vue.config.productionTip = false
 
 // SECURITY HOTSPOT
+const crypto = require("crypto");
+const hash = crypto.createHash('sha1');
 
 /* eslint-disable no-new */
 new Vue({
