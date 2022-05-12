@@ -25,7 +25,7 @@ The quality gate is passing because the sample app was made quite recently.
 
 Now, in order to fail the quality gate, we have to submit a code which has a "low security index"
 
-You should put the lines below in file "jenkins/jobs/build-job/main.js" on line 10:  
+You should put the lines below in file "first-project/src/main.js" on line 10:  
 `const crypto = require("crypto");`   
 `const hash = crypto.createHash('sha1');`  
 That one however has to be pushed to the repo as the jenkins checks out the repo on which the sonarqube will be execute the scanning. So in order to facilitate this stage we have 2 options:
