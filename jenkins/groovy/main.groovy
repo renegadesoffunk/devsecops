@@ -32,8 +32,8 @@ pipeline {
                         sleep(10)
                         
                         qualitygate = waitForQualityGate()
-                        if (qualitygate.status != "OK") {
-                            currentBuild.result = 'ABORTED'
+                        if (qualitygate.status != 'OK') {
+                            currentBuild.result = 'FAILED'
                             error('Quality gate has not passed!!!')
                         }
                     }
