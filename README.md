@@ -12,19 +12,23 @@ Honorable mention: those permissions will be overwritten to their default state 
 
 ## Execution Steps
 First we have to spin up the jenkins and sonarqube (sonarqube has a db and few other builtin capabilities which are all handled by the docker compose file in the root context of the repo)
-This will build the jenkins image with a specific pipeline/job which will be executed at a later stage:
+This will build the jenkins image with a specific pipeline/job which will be executed at a later stage.  
   `docker-compose build`  
-This will spin up the already built jenkins image along with sonarqube and its components:
+Afterwards the following line is in turn. That one will spin up the already built jenkins image along with sonarqube and its components:  
   `docker-compose up -d`  
-The jenkins and sonarqube are supposed ot be fully initialized after ~1-2 minutes (assuming the docker images are previously downloaded). You can check them up by navigating to their UIs. Their http interfaces map to 0.0.0.0:{some port described in the docker-compose file} 
+The jenkins and sonarqube are supposed to be fully initialized after ~1-2 minutes (assuming the docker images are previously downloaded). You can check them up by navigating to their UIs. Their http interfaces map to 0.0.0.0:{some port described in the docker-compose file} 
 
-You may continue now with goint to the jenkins UI on http://localhost:8099
+You may continue now with going to the jenkins UI on http://localhost:8099 (or any other of the host's interfaces IP addresses with the same port)
 The pipeline can be started by navigating within the only job available and pressing "Build Now" button on the interface.
-Once the job is finished you should have the app accessible on localhost:9988
-The quality gate is passing because the sample app was made recently.
+Once the job is successfully finished you should have the app accessible on http://localhost:9988 (or any other of the host's interfaces IP addresses with the same port)
+The quality gate is passing because the sample app was made quite recently.
 
 Now, in order to fail the quality gate, we have to submit a code which has a "low security index"
 
-Security Hotspot place in first-project/src/main.js  
-const crypto = require("crypto");  
-const hash = crypto.createHash('sha1');  
+You should put the lines below in file  on line 10:  
+`const crypto = require("crypto");`   
+`const hash = crypto.createHash('sha1');`  
+That one however has to be pushed to the repo as the jenkins checks out the repo on which the sonarqube will be execute the scanning. So in order to facilitate this stage we have 2 options:
+1. You tell me your github accounts and I provide you with permissions to push to this repo, so you can test it.
+2. You fork this repo and test it. If you go with this option you should adjust the repo URL within file "jenkins/jobs/build-job/config.xml"
+This is the beauty of Jenkins - it will check out a repo accessible over http in its own workspace :)
