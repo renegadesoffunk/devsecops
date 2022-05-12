@@ -1,4 +1,4 @@
-## SUMMARY
+## Summary
 The following repo contains a vuejs application (which I previously created for few minutes following ) and an orchestration which brings up jenkins and sonarqube. The sequence which should be followed is simple - you bring up jenkins and sonarqube containers via docker-compose, then you navigate to the jenkins ui from which you trigger a pipeline/job (which was automatically populated and all is "as a code"). The pipeline basically checks out this very repo, invokes the sonarqube to scan the vuejs app and if the quality gate passes, the app will be build and deployed (via Dockerfile & docker-compose).
 
 ## Assumptions
